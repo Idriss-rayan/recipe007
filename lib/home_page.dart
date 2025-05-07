@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:recipe/paragraph_pdf_api.dart';
 import 'package:recipe/save_and_open_pdf.dart';
 import 'package:recipe/simple_pdf_api.dart';
+import 'package:recipe/table_pdf_api.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -34,7 +35,10 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(height: 24),
           ElevatedButton(
-            onPressed: () async {},
+            onPressed: () async {
+              final tablePdf = await TablePdfApi.generateTablePdf();
+              SaveAndOpenDocument.openPdf(tablePdf);
+            },
             child: const Text("table Pdf"),
           ),
           SizedBox(height: 24),
