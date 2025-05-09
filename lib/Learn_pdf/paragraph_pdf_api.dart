@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
-import 'package:recipe/save_and_open_pdf.dart';
+
+import 'save_and_open_pdf.dart';
 
 class ParagraphPdfApi {
   static Future<File> generateParagraphPdf() async {

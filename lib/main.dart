@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/home_page.dart';
-import 'package:recipe/tester.dart';
+import 'package:recipe/Learn_pdf/tester.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,5 +14,5 @@ class MyApp extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
