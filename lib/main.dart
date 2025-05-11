@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/Learn_pdf/tester.dart';
+import 'package:recipe/navigationBar/nav1_bar.dart';
 import 'package:recipe/navigationBar/nav_bar.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavBar(),
+      home: Nav1Bar(),
     );
   }
 }
