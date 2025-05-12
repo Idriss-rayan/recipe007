@@ -110,7 +110,7 @@ class _Nav1BarState extends State<Nav1Bar> {
         width: 30,
         height: 30,
         colorFilter: ColorFilter.mode(
-          selected ? Colors.black : Colors.black54,
+          selected ? Colors.black : const Color.fromARGB(150, 90, 89, 89),
           BlendMode.srcIn,
         ),
       ),
