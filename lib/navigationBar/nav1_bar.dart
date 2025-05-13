@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe/Learn_pdf/tester.dart';
 import 'package:recipe/employee/add_employee_page.dart';
+import 'package:recipe/employee/my_field.dart';
 
 class Nav1Bar extends StatefulWidget {
   const Nav1Bar({super.key});
@@ -14,7 +15,7 @@ class _Nav1BarState extends State<Nav1Bar> {
   int myIndex = 0;
 
   List<Widget> WidgetList = [
-    Tester(),
+    MyField(),
     Tester(),
     AddEmployeePage(),
   ];
