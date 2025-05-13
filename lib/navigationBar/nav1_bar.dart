@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:recipe/Learn_pdf/tester.dart';
+import 'package:recipe/employee/add_employee_page.dart';
 
 class Nav1Bar extends StatefulWidget {
   const Nav1Bar({super.key});
@@ -15,7 +16,7 @@ class _Nav1BarState extends State<Nav1Bar> {
   List<Widget> WidgetList = [
     Tester(),
     Tester(),
-    Tester(),
+    AddEmployeePage(),
   ];
 
   @override
@@ -80,8 +81,8 @@ class _Nav1BarState extends State<Nav1Bar> {
                 child: Center(
                   child: SvgPicture.asset(
                     'a_svgFiles/add.svg',
-                    width: 35,
-                    height: 35,
+                    width: 25,
+                    height: 25,
                     colorFilter: ColorFilter.mode(
                       Colors.green,
                       BlendMode.srcIn,
