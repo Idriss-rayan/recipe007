@@ -15,7 +15,9 @@ class _Nav1BarState extends State<Nav1Bar> {
   int myIndex = 0;
 
   List<Widget> WidgetList = [
-    MyField(),
+    MyField(
+      htext: '',
+    ),
     Tester(),
     AddEmployeePage(),
   ];
