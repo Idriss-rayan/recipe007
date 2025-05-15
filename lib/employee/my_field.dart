@@ -43,11 +43,11 @@ class _MyFieldState extends State<MyField> {
             },
             cursorColor: Colors.black,
             style: TextStyle(
-                fontSize: 20, color: const Color.fromARGB(142, 158, 158, 158)),
+                fontSize: 15, color: const Color.fromARGB(142, 158, 158, 158)),
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               hintText: widget.htext,
-              hintStyle: TextStyle(color: Colors.grey.withValues(alpha: 0.5)),
+              hintStyle: TextStyle(color: Colors.grey.withValues(alpha: 0.7)),
               iconColor: Colors.blue,
               filled: false,
               border: InputBorder.none,
