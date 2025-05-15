@@ -19,13 +19,13 @@ class _MyFieldState extends State<MyField> {
         decoration: BoxDecoration(
             border: Border.all(
               color: _isTapped
-                  ? const Color.fromARGB(255, 12, 247, 3)
+                  ? const Color.fromARGB(255, 12, 12, 12)
                   : const Color.fromARGB(255, 8, 0, 58),
             ),
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(55, 6, 214, 34),
-                Color.fromARGB(66, 6, 181, 212)
+                Color.fromARGB(10, 6, 214, 34),
+                Color.fromARGB(10, 6, 181, 212)
               ],
             ),
             borderRadius: BorderRadius.circular(15)),

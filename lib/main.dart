@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
+
+late Box box;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,6 +16,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+  box = await Hive.openBox('box');
+  //Hive.registerAdapter(MyObjectAdapter());
   runApp(const MyApp());
 }
