@@ -13,7 +13,7 @@ class _NavBarState extends State<NavBar> {
   List<Widget> WidgetList = const [
     Tester(),
     Tester(),
-    Text('News', style: TextStyle(fontSize: 40)),
+    Text('infos', style: TextStyle(fontSize: 40)),
   ];
   @override
   Widget build(BuildContext context) {
