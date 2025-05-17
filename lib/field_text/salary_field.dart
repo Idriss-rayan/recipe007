@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MyField extends StatefulWidget {
+class SalaryField extends StatefulWidget {
   final String htext;
-  const MyField({super.key, required this.htext});
+  const SalaryField({super.key, required this.htext});
 
   @override
-  State<MyField> createState() => _MyFieldState();
+  State<SalaryField> createState() => _SalaryFieldState();
 }
 
-class _MyFieldState extends State<MyField> {
-  TextInputType phone = TextInputType.phone;
+class _SalaryFieldState extends State<SalaryField> {
   bool _isTapped = false;
   @override
   Widget build(BuildContext context) {
@@ -31,6 +30,7 @@ class _MyFieldState extends State<MyField> {
             ),
             borderRadius: BorderRadius.circular(15)),
         child: TextField(
+          keyboardType: TextInputType.numberWithOptions(),
           onTap: () {
             setState(() {
               _isTapped = true;

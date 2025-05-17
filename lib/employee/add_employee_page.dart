@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/button/button.dart';
 import 'package:recipe/employee/my_field.dart';
+import 'package:recipe/field_text/email_field.dart';
+import 'package:recipe/field_text/phone_field.dart';
+import 'package:recipe/field_text/salary_field.dart';
 
 class AddEmployeePage extends StatelessWidget {
   const AddEmployeePage({super.key});
@@ -65,33 +69,25 @@ class AddEmployeePage extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: const [
-                  SizedBox(height: 30),
                   MyField(
                     htext: 'first name',
                   ),
-                  SizedBox(height: 30),
                   MyField(
                     htext: 'last name',
                   ),
-                  SizedBox(height: 16),
-                  MyField(
-                    htext: 'Salary',
+                  SalaryField(htext: 'Salary'),
+                  EmailField(htext: 'email'),
+                  PhoneField(
+                    htext: 'phone number',
                   ),
-                  SizedBox(height: 16),
-                  MyField(
-                    htext: 'Email Address',
-                  ),
-                  SizedBox(height: 16),
-                  MyField(
-                    htext: 'Phone Number',
-                  ),
-                  SizedBox(height: 16),
                   MyField(
                     htext: 'position held',
                   ),
-                  SizedBox(height: 16),
                   MyField(
                     htext: '',
+                  ),
+                  FancyButton(
+                    text: 'save',
                   ),
                 ],
               ),
