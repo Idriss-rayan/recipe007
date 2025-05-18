@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/bank_account.dart';
+import 'package:recipe/boxes.dart';
 import 'package:recipe/button/button.dart';
 import 'package:recipe/employee/my_field.dart';
 import 'package:recipe/field_text/email_field.dart';
@@ -78,7 +80,10 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  MyField(htext: 'first name', controller: _controller1),
+                  MyField(
+                    htext: 'first name',
+                    controller: _controller1,
+                  ),
                   MyField(
                     htext: 'last name',
                     controller: _controller2,
@@ -108,6 +113,18 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                         );
                         return;
                       }
+                      setState(() {
+                        boxPersons.put(
+                          'key_${_controller1.text}',
+                          BankAccount(
+                            currency: _controller1.text,
+                            firstName: _controller2.text,
+                            lastName: _controller2.text,
+                            salary: int.parse(_controller3.text),
+                            myMoney: int.parse(_controller3.text),
+                          ),
+                        );
+                      });
                     },
                   ),
                 ],
