@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class MyField extends StatefulWidget {
   final String htext;
-  const MyField({super.key, required this.htext});
+  final TextEditingController controller;
+  const MyField({super.key, required this.htext, required this.controller});
 
   @override
   State<MyField> createState() => _MyFieldState();
@@ -14,7 +15,7 @@ class _MyFieldState extends State<MyField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+      padding: const EdgeInsets.all(15),
       child: Container(
         height: 50,
         decoration: BoxDecoration(
@@ -31,6 +32,7 @@ class _MyFieldState extends State<MyField> {
             ),
             borderRadius: BorderRadius.circular(15)),
         child: TextField(
+          controller: widget.controller,
           onTap: () {
             setState(() {
               _isTapped = true;

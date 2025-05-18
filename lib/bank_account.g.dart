@@ -18,17 +18,26 @@ class BankAccountAdapter extends TypeAdapter<BankAccount> {
     };
     return BankAccount(
       currency: fields[0] as String,
-      myMoney: fields[1] as int,
+      firstName: fields[1] as String,
+      lastName: fields[2] as String,
+      salary: fields[3] as int,
+      myMoney: fields[4] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, BankAccount obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.currency)
       ..writeByte(1)
+      ..write(obj.firstName)
+      ..writeByte(2)
+      ..write(obj.lastName)
+      ..writeByte(3)
+      ..write(obj.salary)
+      ..writeByte(4)
       ..write(obj.myMoney);
   }
 

@@ -5,9 +5,18 @@ import 'package:recipe/field_text/email_field.dart';
 import 'package:recipe/field_text/phone_field.dart';
 import 'package:recipe/field_text/salary_field.dart';
 
-class AddEmployeePage extends StatelessWidget {
+class AddEmployeePage extends StatefulWidget {
   const AddEmployeePage({super.key});
 
+  @override
+  State<AddEmployeePage> createState() => _AddEmployeePageState();
+}
+
+class _AddEmployeePageState extends State<AddEmployeePage> {
+  final TextEditingController _controller1 = TextEditingController();
+  final TextEditingController _controller2 = TextEditingController();
+  final TextEditingController _controller3 = TextEditingController();
+  final TextEditingController _controller4 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,26 +77,38 @@ class AddEmployeePage extends StatelessWidget {
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.all(8),
-                children: const [
-                  MyField(
-                    htext: 'first name',
-                  ),
+                children: [
+                  MyField(htext: 'first name', controller: _controller1),
                   MyField(
                     htext: 'last name',
+                    controller: _controller2,
                   ),
                   SalaryField(htext: 'Salary'),
                   EmailField(htext: 'email'),
-                  PhoneField(
-                    htext: 'phone number',
-                  ),
+                  PhoneField(htext: 'phone number'),
                   MyField(
                     htext: 'position held',
+                    controller: _controller3,
                   ),
                   MyField(
                     htext: '',
+                    controller: _controller4,
                   ),
                   FancyButton(
                     text: 'save',
+                    onPressed: () {
+                      final firstName = _controller1.text;
+                      final lastName = _controller2.text;
+                      final salary = _controller3.text;
+
+                      if (firstName.isEmpty || lastName.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                              content: Text('please fill the required fields')),
+                        );
+                        return;
+                      }
+                    },
                   ),
                 ],
               ),

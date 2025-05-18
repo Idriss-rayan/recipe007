@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 Future<void> main() async {
   await Hive.initFlutter();
-  boxPersons = await Hive.openBox<BankAccount>('personBox');
   Hive.registerAdapter(BankAccountAdapter());
+  boxPersons = await Hive.openBox<BankAccount>('personBox');
   runApp(const MyApp());
 }
