@@ -112,8 +112,7 @@ class _TesterState extends State<Tester> {
                                     // Optional: Show a confirmation snackbar
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
-                                        content:
-                                            Text('Item deleted successfully.'),
+                                        content: Text(' deleted successfully.'),
                                       ),
                                     );
                                   },
