@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:recipe/boxes.dart';
+import 'package:recipe/infos.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
-
-import 'bank_account.dart';
 
 late Box box;
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
 
 Future<void> main() async {
   await Hive.initFlutter();
-  Hive.registerAdapter(BankAccountAdapter());
-  boxPersons = await Hive.openBox<BankAccount>('personBox');
+  Hive.registerAdapter(InfosAdapter());
+  infos = await Hive.openBox<Infos>('infos');
   runApp(const MyApp());
 }

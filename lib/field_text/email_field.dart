@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class EmailField extends StatefulWidget {
   final String htext;
-  const EmailField({super.key, required this.htext});
+  final TextEditingController controller;
+  const EmailField({super.key, required this.htext, required this.controller});
 
   @override
   State<EmailField> createState() => _EmailFieldState();

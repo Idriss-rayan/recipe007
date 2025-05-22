@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/bank_account.dart';
 import 'package:recipe/boxes.dart';
+import 'package:recipe/infos.dart';
 
 class Tester extends StatefulWidget {
   const Tester({super.key});
@@ -78,9 +78,9 @@ class _TesterState extends State<Tester> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: boxPersons.length,
+                itemCount: infos.length,
                 itemBuilder: (context, index) {
-                  BankAccount? bank = boxPersons.getAt(index);
+                  Infos? info = infos.getAt(index);
                   return ListTile(
                     leading: IconButton(
                       onPressed: () {
@@ -106,7 +106,7 @@ class _TesterState extends State<Tester> {
                                     Navigator.of(context)
                                         .pop(); // Close the dialog
                                     setState(() {
-                                      boxPersons.deleteAt(index); // Delete item
+                                      infos.deleteAt(index); // Delete item
                                     });
 
                                     // Optional: Show a confirmation snackbar
@@ -126,9 +126,9 @@ class _TesterState extends State<Tester> {
                       },
                       icon: const Icon(Icons.remove),
                     ),
-                    title: Text(bank!.firstName),
-                    subtitle: const Text('Name'),
-                    trailing: Text('age: ${bank?.firstName.toString()}'),
+                    title: Text(info!.email.toString()),
+                    subtitle: Text('last name: ${info?.lastName.toString()}'),
+                    trailing: Text('phone: ${info?.email}'),
                   );
                 },
               ),

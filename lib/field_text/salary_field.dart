@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class SalaryField extends StatefulWidget {
   final String htext;
-  const SalaryField({super.key, required this.htext});
+  final TextEditingController controller;
+  const SalaryField({super.key, required this.htext, required this.controller});
 
   @override
   State<SalaryField> createState() => _SalaryFieldState();

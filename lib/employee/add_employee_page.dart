@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/bank_account.dart';
 import 'package:recipe/boxes.dart';
 import 'package:recipe/button/button.dart';
 import 'package:recipe/employee/my_field.dart';
 import 'package:recipe/field_text/email_field.dart';
 import 'package:recipe/field_text/phone_field.dart';
 import 'package:recipe/field_text/salary_field.dart';
+import 'package:recipe/infos.dart';
 
 class AddEmployeePage extends StatefulWidget {
   const AddEmployeePage({super.key});
@@ -19,6 +19,8 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
   final TextEditingController _controller2 = TextEditingController();
   final TextEditingController _controller3 = TextEditingController();
   final TextEditingController _controller4 = TextEditingController();
+  final TextEditingController _controller5 = TextEditingController();
+  final TextEditingController _controller6 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,16 +90,25 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                     htext: 'last name',
                     controller: _controller2,
                   ),
-                  SalaryField(htext: 'Salary'),
-                  EmailField(htext: 'email'),
-                  PhoneField(htext: 'phone number'),
+                  SalaryField(
+                    htext: 'Salary',
+                    controller: _controller3,
+                  ),
+                  EmailField(
+                    htext: 'email',
+                    controller: _controller4,
+                  ),
+                  PhoneField(
+                    htext: 'phone number',
+                    controller: _controller5,
+                  ),
                   MyField(
                     htext: 'position held',
-                    controller: _controller3,
+                    controller: _controller6,
                   ),
                   MyField(
                     htext: '',
-                    controller: _controller4,
+                    controller: _controller6,
                   ),
                   FancyButton(
                     text: 'save',
@@ -105,6 +116,9 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       final firstName = _controller1.text;
                       final lastName = _controller2.text;
                       final salary = _controller3.text;
+                      final email = _controller4.text;
+                      final phone = _controller5.text;
+                      final position = _controller6.text;
 
                       if (firstName.isEmpty || lastName.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -114,14 +128,15 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                         return;
                       }
                       setState(() {
-                        boxPersons.put(
+                        infos.put(
                           'key_${_controller1.text}',
-                          BankAccount(
-                            currency: _controller1.text,
-                            firstName: _controller2.text,
+                          Infos(
+                            firstName: _controller1.text,
                             lastName: _controller2.text,
-                            salary: int.parse(_controller3.text),
-                            myMoney: int.parse(_controller3.text),
+                            salary: int.tryParse(_controller3.text) ?? 0,
+                            email: _controller4.text,
+                            phone: int.tryParse(_controller5.text) ?? 0,
+                            position: int.tryParse(_controller6.text) ?? 0,
                           ),
                         );
                       });

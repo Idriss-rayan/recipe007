@@ -4,7 +4,8 @@ import 'package:intl_phone_field/phone_number.dart';
 
 class PhoneField extends StatefulWidget {
   final String htext;
-  const PhoneField({super.key, required this.htext});
+  final TextEditingController controller;
+  const PhoneField({super.key, required this.htext, required this.controller});
 
   @override
   State<PhoneField> createState() => _PhoneFieldState();

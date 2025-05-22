@@ -1,16 +1,17 @@
 import 'package:hive/hive.dart';
-import 'package:recipe/bank_account.dart';
+import 'package:recipe/infos.dart';
 
-late Box<BankAccount> boxPersons;
+late Box<Infos> infos;
 
 Future<void> addSampleAccount() async {
-  final account = BankAccount(
-    currency: 'USD',
-    firstName: 'John',
-    lastName: 'Doe',
-    salary: 3000,
-    myMoney: 500,
+  final account = Infos(
+    firstName: "",
+    lastName: "",
+    salary: 100,
+    email: "",
+    phone: 300,
+    position: 400,
   );
 
-  await boxPersons.add(account);
+  await infos.add(account);
 }
