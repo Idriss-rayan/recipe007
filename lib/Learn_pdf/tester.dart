@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/person_card/costum_card.dart';
 
 class Tester extends StatefulWidget {
   const Tester({super.key});
@@ -75,27 +74,63 @@ class _TesterState extends State<Tester> {
                 ),
               ),
             ),
-            Expanded(
-              child: Column(
-                children: [
-                  CustomCard(
-                    code: '',
-                    name: '',
-                    status: '',
-                  ),
-                  CustomCard(
-                    code: '',
-                    name: '',
-                    status: '',
-                  ),
-                  CustomCard(
-                    code: '',
-                    name: '',
-                    status: '',
-                  ),
-                ],
-              ),
-            ),
+            // Expanded(
+            //   child: ListView.builder(
+            //     itemCount: infos.length,
+            //     itemBuilder: (context, index) {
+            //       Infos? info = infos.getAt(index);
+            //       return ListTile(
+            //         leading: IconButton(
+            //           onPressed: () {
+            //             showDialog(
+            //               context: context,
+            //               builder: (BuildContext context) {
+            //                 return AlertDialog(
+            //                   title: const Text('Confirmation'),
+            //                   content: const Text(
+            //                       'Are you sure you want to delete this item?'),
+            //                   actions: <Widget>[
+            //                     TextButton(
+            //                       onPressed: () => Navigator.of(context)
+            //                           .pop(), // Close the dialog
+            //                       child: const Text('Cancel'),
+            //                     ),
+            //                     ElevatedButton(
+            //                       style: ElevatedButton.styleFrom(
+            //                         backgroundColor: Colors.red,
+            //                         foregroundColor: Colors.white,
+            //                       ),
+            //                       onPressed: () {
+            //                         Navigator.of(context)
+            //                             .pop(); // Close the dialog
+            //                         setState(() {
+            //                           infos.deleteAt(index); // Delete item
+            //                         });
+
+            //                         // Optional: Show a confirmation snackbar
+            //                         ScaffoldMessenger.of(context).showSnackBar(
+            //                           const SnackBar(
+            //                             content:
+            //                                 Text(' Items has been deleted.'),
+            //                           ),
+            //                         );
+            //                       },
+            //                       child: const Text('Delete'),
+            //                     ),
+            //                   ],
+            //                 );
+            //               },
+            //             );
+            //           },
+            //           icon: const Icon(Icons.remove),
+            //         ),
+            //         //title: Text(info!.lastName.toString()),
+            //         // subtitle: Text('last name: ${info?.lastName.toString()}'),
+            //         // trailing: Text('phone: ${info?.phone.toString()}'),
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
