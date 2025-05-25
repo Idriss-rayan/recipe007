@@ -121,7 +121,8 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       if (firstName.isEmpty || lastName.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('please fill the required fields'),
+                            content:
+                                Text('please fill all the required fields'),
                           ),
                         );
                         return;

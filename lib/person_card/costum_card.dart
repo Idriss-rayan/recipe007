@@ -87,7 +87,7 @@ class CustomCard extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
