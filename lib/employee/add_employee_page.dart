@@ -113,10 +113,10 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                     onPressed: () {
                       final firstName = _controller1.text;
                       final lastName = _controller2.text;
-                      // final salary = _controller3.text;
-                      // final email = _controller4.text;
-                      // final phone = _controller5.text;
-                      // final position = _controller6.text;
+                      final salary = _controller3.text;
+                      final email = _controller4.text;
+                      final phone = _controller5.text;
+                      final position = _controller6.text;
 
                       if (firstName.isEmpty || lastName.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
