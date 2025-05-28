@@ -79,7 +79,7 @@ class _TesterState extends State<Tester> {
                 child: Column(
               children: [
                 CustomCard(
-                  name: 'rayan',
+                  name: 'idriss',
                   status: 'payer',
                   code: 'spectre-007',
                 )
