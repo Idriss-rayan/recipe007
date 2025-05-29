@@ -81,7 +81,7 @@ class _TesterState extends State<Tester> {
                 CustomCard(
                   name: 'idriss',
                   status: 'payer',
-                  code: 'spectre-007',
+                  code: 'J.Bond',
                 )
               ],
             )),
