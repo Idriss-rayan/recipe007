@@ -80,7 +80,7 @@ class _TesterState extends State<Tester> {
               children: [
                 CustomCard(
                   name: 'idriss',
-                  status: 'payer',
+                  status: 'price',
                   code: 'james',
                 )
               ],
