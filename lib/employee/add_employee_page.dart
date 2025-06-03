@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:recipe/button/button.dart';
 import 'package:recipe/employee.dart';
 import 'package:recipe/employee/my_field.dart';
@@ -111,7 +112,7 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                   ),
                   FancyButton(
                     text: 'save',
-                    onPressed: () {
+                    onPressed: () async {
                       final firstName = _controller1.text;
                       final lastName = _controller2.text;
                       final salary = _controller3.text;
@@ -136,6 +137,8 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                         phone: phone,
                         position: position,
                       );
+                      final box = Hive.box<Employee>('employees');
+                      await box.add(newEmployee);
                     },
                   ),
                 ],

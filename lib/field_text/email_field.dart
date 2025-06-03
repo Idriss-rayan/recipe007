@@ -15,6 +15,7 @@ class _EmailFieldState extends State<EmailField> {
     return Padding(
       padding: EdgeInsets.all(15),
       child: TextFormField(
+        controller: widget.controller,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.emailAddress,
         cursorColor: Colors.grey,

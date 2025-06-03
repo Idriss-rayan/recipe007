@@ -17,6 +17,7 @@ class _PhoneFieldState extends State<PhoneField> {
     return Padding(
       padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
       child: IntlPhoneField(
+        controller: widget.controller,
         initialCountryCode: 'CM',
         keyboardType: TextInputType.phone,
         onChanged: (PhoneNumber phone) {

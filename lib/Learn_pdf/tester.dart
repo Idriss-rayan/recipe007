@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:recipe/employee.dart';
 import 'package:recipe/person_card/costum_card.dart';
 
 class Tester extends StatefulWidget {
@@ -11,6 +13,8 @@ class Tester extends StatefulWidget {
 class _TesterState extends State<Tester> {
   @override
   Widget build(BuildContext context) {
+    final box = Hive.box<Employee>('employees');
+    final employees = box.values.toList();
     return Scaffold(
       backgroundColor: Colors.white, // même fond que Figma
       body: Center(
@@ -19,7 +23,7 @@ class _TesterState extends State<Tester> {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: SizedBox(
-                width: 412,
+                width: double.infinity,
                 height: 300,
                 child: Column(
                   children: [
@@ -77,12 +81,13 @@ class _TesterState extends State<Tester> {
             ),
             Expanded(
               child: ListView.separated(
-                itemCount: 100,
+                itemCount: employees.length,
                 itemBuilder: (context, index) {
-                  return CustomCard(
-                    name: 'Carlos Hernandez',
-                    status: 'en cours',
-                    code: 'F987QWE',
+                  final e = employees[index];
+                  return ListTile(
+                    title: Text('${e.firstName} ${e.lastName}'),
+                    subtitle: Text('${e.position} • ${e.phone.toString()}'),
+                    trailing: Text('${e.salary} \$'),
                   );
                 },
                 separatorBuilder: (context, index) => Divider(),

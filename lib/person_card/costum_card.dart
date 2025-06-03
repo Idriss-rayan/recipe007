@@ -3,11 +3,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomCard extends StatelessWidget {
   final String name;
+  final String phone;
+  final String email;
+  final String salary;
+  final String position;
   final String status;
   final String code;
-  CustomCard({
+
+  const CustomCard({
     super.key,
     required this.name,
+    required this.phone,
+    required this.email,
+    required this.salary,
+    required this.position,
     required this.status,
     required this.code,
   });
@@ -15,79 +24,100 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Container(
-        width: double.infinity,
-        height: 100,
         decoration: BoxDecoration(
-          color: Color.fromARGB(16, 37, 246, 159),
-          borderRadius: BorderRadius.circular(15),
+          color: const Color.fromARGB(15, 6, 214, 111),
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: const Color.fromARGB(255, 0, 25, 60),
+            color: const Color.fromARGB(255, 0, 40, 76),
+            width: 1.5,
           ),
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 20,
-            ),
+            const SizedBox(width: 12),
             Container(
+              margin: const EdgeInsets.only(top: 16),
               width: 80,
               height: 80,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: const Color.fromARGB(49, 179, 243, 225),
+                color: Colors.teal.withOpacity(0.1),
                 border: Border.all(
-                  color: const Color.fromARGB(103, 0, 30, 63),
+                  color: Colors.teal.shade800,
                   width: 2,
                 ),
               ),
               child: SvgPicture.asset(
                 'a_svgFiles/person.svg',
-                width: 15,
-                height: 15,
                 fit: BoxFit.scaleDown,
               ),
             ),
-            SizedBox(
-              width: 15,
-            ),
+            const SizedBox(width: 12),
             Expanded(
-              child: Column(
-                children: [
-                  SizedBox(height: 10),
-                  Text(
-                    name.toUpperCase(),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name.toUpperCase(),
+                      style: const TextStyle(
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: const Color.fromARGB(81, 1, 113, 78)),
-                  ),
-                  SizedBox(height: 5),
-                  Divider(),
-                  SelectableText(
-                    code,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: const Color.fromARGB(67, 68, 69, 69),
+                        color: Color.fromARGB(255, 0, 51, 40),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    status.toUpperCase(),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 10,
-                        color: const Color.fromARGB(255, 2, 237, 198)),
-                  ),
-                ],
+                    const SizedBox(height: 6),
+                    Text(
+                      '📞 $phone',
+                      style:
+                          const TextStyle(fontSize: 14, color: Colors.black87),
+                    ),
+                    Text(
+                      '📧 $email',
+                      style:
+                          const TextStyle(fontSize: 14, color: Colors.black87),
+                    ),
+                    Text(
+                      '💼 Position: $position',
+                      style:
+                          const TextStyle(fontSize: 14, color: Colors.black87),
+                    ),
+                    Text(
+                      '💰 Salary: $salary €',
+                      style:
+                          const TextStyle(fontSize: 14, color: Colors.black87),
+                    ),
+                    const SizedBox(height: 6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Chip(
+                          label: Text(
+                            status.toUpperCase(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          backgroundColor: status.toLowerCase() == 'complete'
+                              ? const Color.fromARGB(167, 76, 175, 79)
+                              : Colors.redAccent,
+                        ),
+                        Text(
+                          'Code: $code',
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),

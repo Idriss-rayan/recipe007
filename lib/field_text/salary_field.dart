@@ -31,6 +31,7 @@ class _SalaryFieldState extends State<SalaryField> {
             ),
             borderRadius: BorderRadius.circular(15)),
         child: TextField(
+          controller: widget.controller,
           keyboardType: TextInputType.numberWithOptions(),
           onTap: () {
             setState(() {

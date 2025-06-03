@@ -4,7 +4,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:recipe/employee.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
 
-late Box box;
+late Box<Employee> employeeBox;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
