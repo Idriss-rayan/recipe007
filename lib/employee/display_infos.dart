@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/button/download_button.dart';
+import 'package:recipe/employee.dart';
 
 class DisplayInfos extends StatefulWidget {
-  const DisplayInfos({super.key});
+  final Employee e;
+  const DisplayInfos({super.key, required this.e});
 
   @override
   State<DisplayInfos> createState() => _DisplayInfosState();
@@ -98,184 +100,256 @@ class _DisplayInfosState extends State<DisplayInfos> {
               ),
             ),
             Expanded(
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            const Color.fromARGB(255, 4, 161, 124),
-                            const Color.fromARGB(255, 90, 100, 240),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.greenAccent, Colors.white],
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.black),
-                              ),
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Text(
-                                  'full name:'.toUpperCase(),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: const Color.fromARGB(139, 0, 0, 0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.greenAccent, Colors.white],
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.black),
-                              ),
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Text(
-                                  'salary:'.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: const Color.fromARGB(139, 0, 0, 0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.greenAccent, Colors.white],
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.black),
-                              ),
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Text(
-                                  'e-mail:'.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: const Color.fromARGB(139, 0, 0, 0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.greenAccent, Colors.white],
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.black),
-                              ),
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Text(
-                                  'phone No:'.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: const Color.fromARGB(139, 0, 0, 0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.all(15),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [Colors.greenAccent, Colors.white],
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.black),
-                              ),
-                              width: double.infinity,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Text(
-                                  'position:'.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: const Color.fromARGB(139, 0, 0, 0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: DownloadButton(
-                                  onPressed: () {},
-                                ),
-                              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color.fromARGB(255, 4, 161, 124),
+                              const Color.fromARGB(255, 90, 100, 240),
                             ],
                           ),
-                        ],
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.greenAccent, Colors.white],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'full name:'.toUpperCase(),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                      Text(
+                                        ' ${widget.e.firstName} ${widget.e.lastName}',
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.greenAccent, Colors.white],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'salary:'.toUpperCase(),
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                      Text(
+                                        ' ${widget.e.salary}'.toUpperCase(),
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.greenAccent, Colors.white],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'e-mail:'.toUpperCase(),
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                      Text(
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        ' ${widget.e.email}',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.greenAccent, Colors.white],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'phone No:'.toUpperCase(),
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                      Text(
+                                        ' ${widget.e.phone}',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.greenAccent, Colors.white],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                width: double.infinity,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        ' position:'.toUpperCase(),
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                      Text(
+                                        ' ${widget.e.position}',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: const Color.fromARGB(
+                                              139, 0, 0, 0),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: DownloadButton(
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],

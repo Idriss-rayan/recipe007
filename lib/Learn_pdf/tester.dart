@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:recipe/employee.dart';
-import 'package:recipe/person_card/costum_card.dart';
 
 class Tester extends StatefulWidget {
   const Tester({super.key});
