@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:recipe/button/delete_button.dart';
 
 class CustomCard extends StatelessWidget {
   final String name;
@@ -9,6 +10,7 @@ class CustomCard extends StatelessWidget {
   final String position;
   final String status;
   final String code;
+  final VoidCallback onTap;
 
   const CustomCard({
     super.key,
@@ -19,6 +21,7 @@ class CustomCard extends StatelessWidget {
     required this.position,
     required this.status,
     required this.code,
+    required this.onTap,
   });
 
   @override
@@ -38,22 +41,28 @@ class CustomCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(width: 12),
-            Container(
-              margin: const EdgeInsets.only(top: 16),
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.teal.withOpacity(0.1),
-                border: Border.all(
-                  color: Colors.teal.shade800,
-                  width: 2,
+            Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 16),
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.teal.withOpacity(0.1),
+                    border: Border.all(
+                      color: Colors.teal.shade800,
+                      width: 2,
+                    ),
+                  ),
+                  child: SvgPicture.asset(
+                    'a_svgFiles/person.svg',
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
-              ),
-              child: SvgPicture.asset(
-                'a_svgFiles/person.svg',
-                fit: BoxFit.scaleDown,
-              ),
+                const SizedBox(height: 12),
+                DeleteButton(onTap: onTap),
+              ],
             ),
             const SizedBox(width: 12),
             Expanded(

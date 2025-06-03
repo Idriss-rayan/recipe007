@@ -35,16 +35,15 @@ class _TesterState extends State<Tester> {
                           // Dégradé de fond
                           Container(
                             decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xFF6EE7B7),
-                                    Color(0xFF3B82F6)
-                                  ],
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(40))),
+                              gradient: LinearGradient(
+                                colors: [Color(0xFF6EE7B7), Color(0xFF3B82F6)],
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(40),
+                              ),
+                            ),
                           ),
                           // Cercle bleu
                           Positioned(

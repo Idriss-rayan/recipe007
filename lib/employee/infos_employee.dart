@@ -95,7 +95,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                         ),
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_forward_ios, size: 16),
-                        label: const Text("Voir"),
+                        label: const Text("Ad"),
                       ),
                     ),
                   ],
@@ -115,6 +115,47 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                     position: e.position,
                     status: 'Store',
                     code: ' ',
+                    // delete ici
+                    onTap: () async {
+                      final confirmed = await showDialog<bool>(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: const Text("Confirm Deletion"),
+                          content: const Text(
+                              "Do you really want to delete this employee?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, false),
+                              child: const Text(
+                                "Cancel",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: Colors.black),
+                                ),
+                                child: Text(
+                                  "Delete",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+
+                      if (confirmed == true) {
+                        final key = box.keyAt(employees.length - 1 - index);
+                        await box.delete(key);
+                        setState(() {});
+                      }
+                    },
                   );
                 },
                 separatorBuilder: (context, index) => Divider(),
