@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/button/download_button.dart';
 
 class DisplayInfos extends StatefulWidget {
   const DisplayInfos({super.key});
@@ -130,7 +131,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 20,
+                            height: 5,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -258,6 +259,17 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                 ),
                               ),
                             ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: DownloadButton(
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
