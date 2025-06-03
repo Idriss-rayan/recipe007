@@ -120,11 +120,15 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       final phone = _controller5.text;
                       final position = _controller6.text;
 
-                      if (firstName.isEmpty || lastName.isEmpty) {
+                      if (firstName.isEmpty ||
+                          lastName.isEmpty ||
+                          salary.isEmpty ||
+                          email.isEmpty ||
+                          phone.isEmpty ||
+                          position.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content:
-                                Text('please fill all the required fields'),
+                            content: Text('please fill all fields'),
                           ),
                         );
                         return;
