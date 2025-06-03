@@ -33,6 +33,7 @@ class _DeleteButtonState extends State<DeleteButton> {
                 offset: const Offset(0, 3),
               ),
             ],
+            border: Border.all(color: const Color.fromARGB(255, 161, 2, 2)),
           ),
           child: const Padding(
             padding: EdgeInsets.all(8.0),

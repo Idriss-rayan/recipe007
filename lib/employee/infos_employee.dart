@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:recipe/employee.dart';
+import 'package:recipe/employee/display_infos.dart';
 import 'package:recipe/person_card/costum_card.dart';
 
 class InfosEmployee extends StatefulWidget {
@@ -106,58 +107,68 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                 itemCount: employees.length,
                 itemBuilder: (context, index) {
                   final e = employees[index];
-                  return CustomCard(
-                    name: '${e.firstName} ${e.lastName}',
-                    phone: e.phone,
-                    email: e.email,
-                    salary: e.salary,
-                    position: e.position,
-                    status: 'Store',
-                    code: ' ',
-                    // delete ici
-                    onTap: () async {
-                      final confirmed = await showDialog<bool>(
-                        context: context,
-                        builder: (_) => AlertDialog(
-                          title: const Text("Confirm Deletion"),
-                          content: const Text(
-                              "Do you really want to delete this employee?"),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, false),
-                              child: const Text(
-                                "Cancel",
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, true),
-                              child: Container(
-                                padding: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color:
-                                        const Color.fromARGB(255, 239, 136, 2),
-                                  ),
-                                ),
-                                child: Text(
-                                  "Delete",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ],
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => DisplayInfos(),
                         ),
                       );
-
-                      if (confirmed == true) {
-                        final key = box.keyAt(employees.length - 1 - index);
-                        await box.delete(key);
-                        setState(() {});
-                      }
                     },
+                    child: CustomCard(
+                      name: '${e.firstName} ${e.lastName}',
+                      phone: e.phone,
+                      email: e.email,
+                      salary: e.salary,
+                      position: e.position,
+                      status: 'Store',
+                      code: ' ',
+                      // delete ici
+                      onTap: () async {
+                        final confirmed = await showDialog<bool>(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            title: const Text("Confirm Deletion"),
+                            content: const Text(
+                                "Do you really want to delete this employee?"),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, false),
+                                child: const Text(
+                                  "Cancel",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, true),
+                                child: Container(
+                                  padding: EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 239, 136, 2),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "Delete",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+
+                        if (confirmed == true) {
+                          final key = box.keyAt(employees.length - 1 - index);
+                          await box.delete(key);
+                          setState(() {});
+                        }
+                      },
+                    ),
                   );
                 },
                 separatorBuilder: (context, index) => Divider(),

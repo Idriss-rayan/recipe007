@@ -84,29 +84,29 @@ class CustomCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 0, 51, 40),
+                        color: Color.fromARGB(195, 0, 51, 40),
                       ),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       '📞 $phone',
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black87),
+                      style: const TextStyle(
+                          fontSize: 14, color: Color.fromARGB(171, 0, 0, 0)),
                     ),
                     Text(
                       '📧 $email',
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black87),
+                      style: const TextStyle(
+                          fontSize: 14, color: Color.fromARGB(169, 0, 0, 0)),
                     ),
                     Text(
                       '💼 Position: $position',
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black87),
+                      style: const TextStyle(
+                          fontSize: 14, color: Color.fromARGB(157, 0, 0, 0)),
                     ),
                     Text(
                       '💰 Salary: $salary €',
-                      style:
-                          const TextStyle(fontSize: 14, color: Colors.black87),
+                      style: const TextStyle(
+                          fontSize: 14, color: Color.fromARGB(149, 0, 0, 0)),
                     ),
                     const SizedBox(height: 6),
                     Row(
