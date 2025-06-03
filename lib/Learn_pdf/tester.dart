@@ -76,15 +76,16 @@ class _TesterState extends State<Tester> {
               ),
             ),
             Expanded(
-                child: Column(
-              children: [
-                CustomCard(
-                  name: 'idriss',
-                  status: 'price',
-                  code: 'st',
-                )
-              ],
-            )),
+              child: ListView(
+                children: [
+                  CustomCard(
+                    name: 'Mohamed Diallo',
+                    status: 'en attente',
+                    code: 'B456LMN',
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

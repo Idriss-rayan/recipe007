@@ -77,7 +77,7 @@ class CustomCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'status'.toUpperCase(),
+                    status.toUpperCase(),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
