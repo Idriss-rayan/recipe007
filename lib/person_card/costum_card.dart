@@ -38,10 +38,11 @@ class CustomCard extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.transparent,
+              color: Colors.black.withOpacity(0.02),
+              offset: Offset(0, 6), // Ombre vers le bas
               blurRadius: 12,
-              offset: Offset(0, 6),
-            )
+              spreadRadius: 2,
+            ),
           ],
         ),
         child: Row(

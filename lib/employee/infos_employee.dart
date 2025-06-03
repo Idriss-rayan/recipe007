@@ -138,7 +138,9 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                                 decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(
+                                    color: const Color.fromARGB(255, 171, 3, 3),
+                                  ),
                                 ),
                                 child: Text(
                                   "Delete",
