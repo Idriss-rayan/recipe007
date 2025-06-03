@@ -130,11 +130,12 @@ class _DisplayInfosState extends State<DisplayInfos> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 50,
+                            height: 20,
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [Colors.greenAccent, Colors.white],
@@ -161,6 +162,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [Colors.greenAccent, Colors.white],
@@ -185,6 +187,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [Colors.greenAccent, Colors.white],
@@ -209,6 +212,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [Colors.greenAccent, Colors.white],
@@ -233,6 +237,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
+                              padding: EdgeInsets.all(15),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [Colors.greenAccent, Colors.white],
