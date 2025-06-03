@@ -108,13 +108,13 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                 itemBuilder: (context, index) {
                   final e = employees[index];
                   return CustomCard(
-                    name: e.firstName,
+                    name: '${e.firstName} ${e.lastName}',
                     phone: e.phone,
                     email: e.email,
                     salary: e.salary,
                     position: e.position,
-                    status: 'complete',
-                    code: 'EMP15878',
+                    status: 'Store',
+                    code: ' ',
                   );
                 },
                 separatorBuilder: (context, index) => Divider(),

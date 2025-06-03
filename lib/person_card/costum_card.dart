@@ -100,12 +100,12 @@ class CustomCard extends StatelessWidget {
                             status.toUpperCase(),
                             style: const TextStyle(color: Colors.white),
                           ),
-                          backgroundColor: status.toLowerCase() == 'complete'
+                          backgroundColor: status.toLowerCase() == 'store'
                               ? const Color.fromARGB(167, 76, 175, 79)
                               : Colors.redAccent,
                         ),
                         Text(
-                          'Code: $code',
+                          ' $code',
                           style: const TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
