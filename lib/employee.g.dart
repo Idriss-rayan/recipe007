@@ -1,39 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'infos.dart';
+part of 'employee.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class InfosAdapter extends TypeAdapter<Infos> {
+class EmployeeAdapter extends TypeAdapter<Employee> {
   @override
-  final int typeId = 1;
+  final int typeId = 0;
 
   @override
-  Infos read(BinaryReader reader) {
+  Employee read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Infos(
-      firstName: "",
-      lastName: "",
-      salary: 0,
-      email: "",
-      phone: 0,
-      position: 0,
-    )
-      ..firstName = fields[0] as String
-      ..lastName = fields[1] as String
-      ..salary = fields[2] as int
-      ..email = fields[3] as String
-      ..phone = fields[4] as int
-      ..position = fields[5] as int;
+    return Employee(
+      firstName: fields[0] as String,
+      lastName: fields[1] as String,
+      salary: fields[2] as String,
+      email: fields[3] as String,
+      phone: fields[4] as String,
+      position: fields[5] as String,
+    );
   }
 
   @override
-  void write(BinaryWriter writer, Infos obj) {
+  void write(BinaryWriter writer, Employee obj) {
     writer
       ..writeByte(6)
       ..writeByte(0)
@@ -56,7 +50,7 @@ class InfosAdapter extends TypeAdapter<Infos> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InfosAdapter &&
+      other is EmployeeAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/button/button.dart';
+import 'package:recipe/employee.dart';
 import 'package:recipe/employee/my_field.dart';
 import 'package:recipe/field_text/email_field.dart';
 import 'package:recipe/field_text/phone_field.dart';
@@ -127,7 +128,14 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                         );
                         return;
                       }
-                      setState(() {});
+                      final newEmployee = Employee(
+                        firstName: firstName,
+                        lastName: lastName,
+                        salary: salary,
+                        email: email,
+                        phone: phone,
+                        position: position,
+                      );
                     },
                   ),
                 ],

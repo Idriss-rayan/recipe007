@@ -76,14 +76,16 @@ class _TesterState extends State<Tester> {
               ),
             ),
             Expanded(
-              child: ListView(
-                children: [
-                  CustomCard(
-                    name: 'Mohamed Diallo',
-                    status: 'en attente',
-                    code: 'B456LMN',
-                  ),
-                ],
+              child: ListView.separated(
+                itemCount: 100,
+                itemBuilder: (context, index) {
+                  return CustomCard(
+                    name: 'Carlos Hernandez',
+                    status: 'en cours',
+                    code: 'F987QWE',
+                  );
+                },
+                separatorBuilder: (context, index) => Divider(),
               ),
             ),
           ],
