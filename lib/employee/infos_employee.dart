@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:recipe/employee.dart';
-import 'package:recipe/employee/hive_boxes.dart';
 import 'package:recipe/person_card/costum_card.dart';
 
 class InfosEmployee extends StatefulWidget {
@@ -139,7 +138,8 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
-                                    color: const Color.fromARGB(255, 171, 3, 3),
+                                    color:
+                                        const Color.fromARGB(255, 239, 136, 2),
                                   ),
                                 ),
                                 child: Text(
