@@ -95,7 +95,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                         ),
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_forward_ios, size: 16),
-                        label: const Text("Ad"),
+                        label: const Text("Plus"),
                       ),
                     ),
                   ],
@@ -131,7 +131,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                       email: e.email,
                       salary: e.salary,
                       position: e.position,
-                      status: 'Store',
+                      status: 'Save',
                       code: ' ',
                       // delete ici
                       onTap: () async {

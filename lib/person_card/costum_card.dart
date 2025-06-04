@@ -82,6 +82,7 @@ class CustomCard extends StatelessWidget {
                     Text(
                       name.toUpperCase(),
                       style: const TextStyle(
+                        overflow: TextOverflow.ellipsis,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(195, 0, 51, 40),
@@ -91,22 +92,32 @@ class CustomCard extends StatelessWidget {
                     Text(
                       '📞 $phone',
                       style: const TextStyle(
-                          fontSize: 14, color: Color.fromARGB(171, 0, 0, 0)),
+                        overflow: TextOverflow.ellipsis,
+                        //overflow: TextOverflow.fade,
+                        fontSize: 14,
+                        color: Color.fromARGB(171, 0, 0, 0),
+                      ),
                     ),
                     Text(
                       '📧 $email',
                       style: const TextStyle(
-                          fontSize: 14, color: Color.fromARGB(169, 0, 0, 0)),
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 14,
+                          color: Color.fromARGB(169, 0, 0, 0)),
                     ),
                     Text(
                       '💼 Position: $position',
                       style: const TextStyle(
-                          fontSize: 14, color: Color.fromARGB(157, 0, 0, 0)),
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 14,
+                          color: Color.fromARGB(157, 0, 0, 0)),
                     ),
                     Text(
-                      '💰 Salary: $salary €',
+                      '💰 Salary: ${'*' * salary.length}',
                       style: const TextStyle(
-                          fontSize: 14, color: Color.fromARGB(149, 0, 0, 0)),
+                          overflow: TextOverflow.ellipsis,
+                          fontSize: 14,
+                          color: Color.fromARGB(149, 0, 0, 0)),
                     ),
                     const SizedBox(height: 6),
                     Row(
@@ -115,11 +126,13 @@ class CustomCard extends StatelessWidget {
                         Chip(
                           label: Text(
                             status.toUpperCase(),
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(
+                                color: Color.fromARGB(157, 0, 0, 0)),
                           ),
-                          backgroundColor: status.toLowerCase() == 'store'
-                              ? const Color.fromARGB(167, 76, 175, 79)
-                              : Colors.redAccent,
+                          backgroundColor: status.toLowerCase() == 'Save'
+                              ? const Color.fromARGB(0, 76, 175, 79)
+                              : const Color.fromARGB(0, 255, 82, 82),
+                          side: BorderSide(color: Colors.green),
                         ),
                         Text(
                           ' $code',

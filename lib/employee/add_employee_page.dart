@@ -143,6 +143,31 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       );
                       final box = Hive.box<Employee>('employees');
                       await box.add(newEmployee);
+
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          title: const Text('Success'),
+                          content: const Text(
+                              'Employee information has been saved successfully.'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // Close the dialog
+                                Navigator.of(context)
+                                    .pop(); // Go back to previous screen (optional)
+                              },
+                              child: const Text(
+                                'OK',
+                                style: TextStyle(color: Colors.green),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
                     },
                   ),
                 ],

@@ -166,15 +166,17 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                               139, 0, 0, 0),
                                         ),
                                       ),
-                                      Text(
-                                        ' ${widget.e.firstName} ${widget.e.lastName}',
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              139, 0, 0, 0),
+                                      Expanded(
+                                        child: Text(
+                                          ' ${widget.e.firstName} ${widget.e.lastName}',
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                139, 0, 0, 0),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -206,13 +208,16 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                               139, 0, 0, 0),
                                         ),
                                       ),
-                                      Text(
-                                        ' ${widget.e.salary}'.toUpperCase(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
-                                          color: const Color.fromARGB(
-                                              139, 0, 0, 0),
+                                      Expanded(
+                                        child: Text(
+                                          ' ${widget.e.salary}'.toUpperCase(),
+                                          style: TextStyle(
+                                            overflow: TextOverflow.fade,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15,
+                                            color: const Color.fromARGB(
+                                                139, 0, 0, 0),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -237,6 +242,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                   child: Row(
                                     children: [
                                       Text(
+                                        maxLines: 1,
                                         'e-mail:'.toUpperCase(),
                                         style: TextStyle(
                                           fontSize: 15,
@@ -244,15 +250,17 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                               139, 0, 0, 0),
                                         ),
                                       ),
-                                      Text(
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        ' ${widget.e.email}',
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              139, 0, 0, 0),
+                                      Expanded(
+                                        child: Text(
+                                          overflow: TextOverflow.fade,
+                                          maxLines: 1,
+                                          ' ${widget.e.email}',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                139, 0, 0, 0),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -284,13 +292,16 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                               139, 0, 0, 0),
                                         ),
                                       ),
-                                      Text(
-                                        ' ${widget.e.phone}',
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              139, 0, 0, 0),
+                                      Expanded(
+                                        child: Text(
+                                          ' ${widget.e.phone}',
+                                          style: TextStyle(
+                                            overflow: TextOverflow.fade,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                139, 0, 0, 0),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -322,13 +333,16 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                               139, 0, 0, 0),
                                         ),
                                       ),
-                                      Text(
-                                        ' ${widget.e.position}',
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              139, 0, 0, 0),
+                                      Expanded(
+                                        child: Text(
+                                          ' ${widget.e.position}',
+                                          style: TextStyle(
+                                            overflow: TextOverflow.fade,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: const Color.fromARGB(
+                                                139, 0, 0, 0),
+                                          ),
                                         ),
                                       ),
                                     ],
