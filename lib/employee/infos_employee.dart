@@ -157,8 +157,8 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                                     color: Colors.red,
                                     borderRadius: BorderRadius.circular(10),
                                     border: Border.all(
-                                      color: const Color.fromARGB(
-                                          255, 239, 136, 2),
+                                      color:
+                                          const Color.fromARGB(255, 161, 1, 28),
                                     ),
                                   ),
                                   child: Text(

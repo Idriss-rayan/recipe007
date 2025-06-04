@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/Learn_pdf/save_and_open_pdf.dart';
 import 'package:recipe/button/download_button.dart';
 import 'package:recipe/employee.dart';
+import 'package:recipe/recipe_generate/pdf_recipe.dart';
 
 class DisplayInfos extends StatefulWidget {
   final Employee e;
@@ -11,6 +13,7 @@ class DisplayInfos extends StatefulWidget {
 }
 
 class _DisplayInfosState extends State<DisplayInfos> {
+  final pdfrecipe = PdfRecipe();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -339,7 +342,21 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: DownloadButton(
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      final simplePdfFile = await pdfrecipe
+                                          .generateStyledReceiptPdf(
+                                        fullName:
+                                            '${widget.e.firstName} ${widget.e.lastName}',
+                                        email: ' ${widget.e.email}',
+                                        phone: ' ${widget.e.phone}',
+                                        position: ' ${widget.e.position}',
+                                        salary: ' ${widget.e.salary}',
+                                        issuedDate: ' ${widget.e.email}',
+                                        description: ' ${widget.e.email}',
+                                      );
+                                      SaveAndOpenDocument.openPdf(
+                                          simplePdfFile);
+                                    },
                                   ),
                                 ),
                               ],
