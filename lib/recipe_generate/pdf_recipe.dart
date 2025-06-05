@@ -86,14 +86,16 @@ class PdfRecipe {
                       pw.SizedBox(height: 50),
                       pw.RichText(
                         text: pw.TextSpan(
-                          text: 'This is to certify that ',
+                          text: 'This is to certify that Mr./Ms.',
                           style: pw.TextStyle(
-                              fontSize: 14, color: PdfColors.black),
+                              lineSpacing: 16,
+                              fontSize: 14,
+                              color: PdfColors.black),
                           children: [
                             pw.TextSpan(
-                              text: 'Mr./Ms.  $fullName '.toUpperCase(),
+                              text: '  $fullName '.toUpperCase(),
                               style: pw.TextStyle(
-                                lineSpacing: 6,
+                                lineSpacing: 16,
                                 fontWeight: pw.FontWeight.bold,
                               ),
                             ),
@@ -103,7 +105,7 @@ class PdfRecipe {
                             pw.TextSpan(
                               text: ' $fullName '.toUpperCase(),
                               style: pw.TextStyle(
-                                lineSpacing: 6,
+                                lineSpacing: 16,
                                 fontWeight: pw.FontWeight.bold,
                               ),
                             ),

@@ -157,8 +157,6 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop(); // Close the dialog
-                                Navigator.of(context)
-                                    .pop(); // Go back to previous screen (optional)
                               },
                               child: const Text(
                                 'OK',

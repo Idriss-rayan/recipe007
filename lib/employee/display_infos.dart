@@ -95,7 +95,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                         ),
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_forward_ios, size: 16),
-                        label: const Text("Ad"),
+                        label: const Text("Plus"),
                       ),
                     ),
                   ],
