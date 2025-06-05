@@ -9,7 +9,7 @@ class CustomCard extends StatelessWidget {
   final String salary;
   final String position;
   final String status;
-  final String code;
+  final String pushAt;
   final VoidCallback onTap;
 
   const CustomCard({
@@ -20,7 +20,7 @@ class CustomCard extends StatelessWidget {
     required this.salary,
     required this.position,
     required this.status,
-    required this.code,
+    required this.pushAt,
     required this.onTap,
   });
 
@@ -134,12 +134,15 @@ class CustomCard extends StatelessWidget {
                               : const Color.fromARGB(0, 255, 82, 82),
                           side: BorderSide(color: Colors.green),
                         ),
-                        Text(
-                          ' $code',
-                          style: const TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black54,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            ' $pushAt',
+                            style: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
                       ],

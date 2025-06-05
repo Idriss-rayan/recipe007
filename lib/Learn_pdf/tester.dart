@@ -12,8 +12,8 @@ class Tester extends StatefulWidget {
 class _TesterState extends State<Tester> {
   @override
   Widget build(BuildContext context) {
-    final box = Hive.box<Employee>('employees');
-    final employees = box.values.toList();
+    final trashBox = Hive.box<Employee>('trash');
+    final deletedEmployees = trashBox.values.toList();
     return Scaffold(
       backgroundColor: Colors.white, // même fond que Figma
       body: Center(
@@ -78,18 +78,22 @@ class _TesterState extends State<Tester> {
               ),
             ),
             Expanded(
-              child: ListView.separated(
-                itemCount: employees.length,
-                itemBuilder: (context, index) {
-                  final e = employees[index];
-                  return ListTile(
-                    title: Text('${e.firstName} ${e.lastName}'),
-                    subtitle: Text('${e.position} • ${e.phone.toString()}'),
-                    trailing: Text('${e.salary} \$'),
-                  );
-                },
-                separatorBuilder: (context, index) => Divider(),
-              ),
+              child: deletedEmployees.isEmpty
+                  ? const Center(child: Text("Trash is empty"))
+                  : ListView.separated(
+                      itemCount: deletedEmployees.length,
+                      itemBuilder: (context, index) {
+                        final e = deletedEmployees[index];
+                        return ListTile(
+                          title: Text('${e.firstName} ${e.lastName}'),
+                          subtitle: Text(
+                              '${e.position} • ${e.phone}\nSupprimé le : ${e.deletedAt != null ? e.deletedAt!.toLocal().toString() : "Date inconnue"}'),
+                          trailing: Text('${e.salary} \$'),
+                          isThreeLine: true,
+                        );
+                      },
+                      separatorBuilder: (context, index) => const Divider(),
+                    ),
             ),
           ],
         ),

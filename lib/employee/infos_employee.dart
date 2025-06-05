@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:intl/intl.dart';
 import 'package:recipe/employee.dart';
 import 'package:recipe/employee/display_infos.dart';
 import 'package:recipe/person_card/costum_card.dart';
@@ -14,6 +15,9 @@ class InfosEmployee extends StatefulWidget {
 class _InfosEmployeeState extends State<InfosEmployee> {
   @override
   Widget build(BuildContext context) {
+    final trashBox = Hive.box<Employee>('trash');
+    final recycle = trashBox.values.toList().reversed.toList();
+    ///////////////////////////////////////////////////////////////
     final box = Hive.box<Employee>('employees');
     final employees = box.values.toList().reversed.toList();
     return Scaffold(
@@ -107,6 +111,16 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                 itemCount: employees.length,
                 itemBuilder: (context, index) {
                   final e = employees[index];
+                  final DateTime issuedDateRaw = e.pushAt ?? DateTime.now();
+                  final DateTime issuedDateRounded = DateTime(
+                    issuedDateRaw.year,
+                    issuedDateRaw.month,
+                    issuedDateRaw.day,
+                    issuedDateRaw.hour,
+                    issuedDateRaw.minute,
+                  );
+                  final String issuedDateFormatted =
+                      DateFormat('dd-MM-yyyy HH:mm').format(issuedDateRounded);
                   return InkWell(
                     onTap: () {
                       Navigator.push(
@@ -132,7 +146,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                       salary: e.salary,
                       position: e.position,
                       status: 'Save',
-                      code: ' ',
+                      pushAt: issuedDateFormatted,
                       // delete ici
                       onTap: () async {
                         final confirmed = await showDialog<bool>(
@@ -172,9 +186,26 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                         );
 
                         if (confirmed == true) {
-                          final key = box.keyAt(employees.length - 1 - index);
-                          await box.delete(key);
-                          setState(() {});
+                          final keys = box.keys.toList();
+                          final key = keys[index];
+                          final deletedEmployee = box.get(key);
+
+                          if (deletedEmployee != null) {
+                            final trashBox = Hive.box<Employee>('trash');
+                            final clonedEmployee = Employee(
+                              firstName: deletedEmployee.firstName,
+                              lastName: deletedEmployee.lastName,
+                              email: deletedEmployee.email,
+                              phone: deletedEmployee.phone,
+                              salary: deletedEmployee.salary,
+                              position: deletedEmployee.position,
+                              deletedAt: DateTime.now(),
+                            );
+
+                            await trashBox.add(clonedEmployee);
+                            await box.delete(key);
+                            setState(() {});
+                          }
                         }
                       },
                     ),

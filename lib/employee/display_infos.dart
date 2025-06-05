@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:recipe/Learn_pdf/save_and_open_pdf.dart';
 import 'package:recipe/button/download_button.dart';
 import 'package:recipe/employee.dart';
@@ -357,6 +358,21 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: DownloadButton(
                                     onPressed: () async {
+                                      final DateTime issuedDateRaw =
+                                          widget.e.pushAt ?? DateTime.now();
+                                      final DateTime issuedDateRounded =
+                                          DateTime(
+                                        issuedDateRaw.year,
+                                        issuedDateRaw.month,
+                                        issuedDateRaw.day,
+                                        issuedDateRaw.hour,
+                                        issuedDateRaw.minute,
+                                      );
+
+                                      final String issuedDateFormatted =
+                                          DateFormat('dd-MM-yyyy HH:mm')
+                                              .format(issuedDateRounded);
+
                                       final simplePdfFile = await pdfrecipe
                                           .generateStyledReceiptPdf(
                                         fullName:
@@ -365,7 +381,8 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                         phone: ' ${widget.e.phone}',
                                         position: ' ${widget.e.position}',
                                         salary: ' ${widget.e.salary}',
-                                        issuedDate: ' ${widget.e.email}',
+                                        issuedDate:
+                                            issuedDateFormatted, // ici c’est une String formatée
                                         description: ' ${widget.e.email}',
                                       );
                                       SaveAndOpenDocument.openPdf(

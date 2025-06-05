@@ -26,5 +26,6 @@ Future<void> main() async {
   Hive.init(directory.path);
   Hive.registerAdapter(EmployeeAdapter());
   await Hive.openBox<Employee>('employees');
+  await Hive.openBox<Employee>('trash');
   runApp(const MyApp());
 }

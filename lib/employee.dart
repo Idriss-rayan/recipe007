@@ -22,6 +22,12 @@ class Employee extends HiveObject {
   @HiveField(5)
   String position;
 
+  @HiveField(6)
+  DateTime? deletedAt;
+
+  @HiveField(7)
+  DateTime? pushAt;
+
   Employee({
     required this.firstName,
     required this.lastName,
@@ -29,5 +35,7 @@ class Employee extends HiveObject {
     required this.email,
     required this.phone,
     required this.position,
+    this.deletedAt,
+    this.pushAt,
   });
 }
