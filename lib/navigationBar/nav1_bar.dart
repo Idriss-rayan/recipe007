@@ -5,7 +5,9 @@ import 'package:recipe/employee/add_employee_page.dart';
 import 'package:recipe/employee/infos_employee.dart';
 
 class Nav1Bar extends StatefulWidget {
-  const Nav1Bar({super.key});
+  final String lastName;
+  final String firstName;
+  const Nav1Bar({super.key, required this.lastName, required this.firstName});
 
   @override
   State<Nav1Bar> createState() => _Nav1BarState();
@@ -14,11 +16,12 @@ class Nav1Bar extends StatefulWidget {
 class _Nav1BarState extends State<Nav1Bar> {
   int myIndex = 0;
 
-  List<Widget> WidgetList = [
+  late final List<Widget> WidgetList = [
     // MyField(
     //   htext: '', controller: ,
     // ),
-    InfosEmployee(),
+    InfosEmployee(
+        lastAdminName: widget.lastName, firstAdminName: widget.firstName),
     Tester(),
     AddEmployeePage(),
   ];

@@ -133,12 +133,17 @@ class _StartScreenState extends State<StartScreen> {
                     // Bouton connecter
                     InkWell(
                       onTap: () {
+                        String lastName = lastNameController.text.trim();
+                        String firstName = firstNameController.text.trim();
                         Navigator.pushReplacement(
                           context,
                           PageRouteBuilder(
                             pageBuilder:
                                 (context, animation, secondaryAnimation) =>
-                                    Nav1Bar(),
+                                    Nav1Bar(
+                              lastName: lastName,
+                              firstName: firstName,
+                            ),
                             transitionsBuilder: (context, animation,
                                 secondaryAnimation, child) {
                               return FadeTransition(

@@ -6,7 +6,10 @@ import 'package:recipe/employee/display_infos.dart';
 import 'package:recipe/person_card/costum_card.dart';
 
 class InfosEmployee extends StatefulWidget {
-  const InfosEmployee({super.key});
+  final String lastAdminName;
+  final String firstAdminName;
+  const InfosEmployee(
+      {super.key, required this.lastAdminName, required this.firstAdminName});
 
   @override
   State<InfosEmployee> createState() => _InfosEmployeeState();
@@ -60,21 +63,21 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                       top: 20,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            "Welcome",
+                            " Hi,",
                             style: TextStyle(
                               fontSize: 45,
                               fontWeight: FontWeight.bold,
                               color: Color.fromARGB(137, 255, 255, 255),
                             ),
                           ),
-                          SizedBox(height: 6),
                           Row(
                             children: [
                               SizedBox(width: 50),
                               Text(
-                                " List of all Employee",
+                                " ${widget.firstAdminName} ${widget.lastAdminName}"
+                                    .toUpperCase(),
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
