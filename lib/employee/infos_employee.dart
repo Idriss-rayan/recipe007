@@ -102,7 +102,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                         ),
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_forward_ios, size: 16),
-                        label: const Text("Plus"),
+                        label: const Text("More"),
                       ),
                     ),
                   ],

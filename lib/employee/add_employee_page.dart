@@ -159,7 +159,7 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop(); // Close the dialog
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   PageRouteBuilder(
                                     pageBuilder: (context, animation,
