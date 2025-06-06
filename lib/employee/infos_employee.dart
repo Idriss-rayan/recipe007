@@ -186,7 +186,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                         );
 
                         if (confirmed == true) {
-                          final keys = box.keys.toList();
+                          final keys = box.keys.toList().reversed.toList();
                           final key = keys[index];
                           final deletedEmployee = box.get(key);
 
