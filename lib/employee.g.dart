@@ -23,13 +23,15 @@ class EmployeeAdapter extends TypeAdapter<Employee> {
       email: fields[3] as String,
       phone: fields[4] as String,
       position: fields[5] as String,
+      deletedAt: fields[6] as DateTime?,
+      pushAt: fields[7] as DateTime?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Employee obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.firstName)
       ..writeByte(1)
@@ -41,7 +43,11 @@ class EmployeeAdapter extends TypeAdapter<Employee> {
       ..writeByte(4)
       ..write(obj.phone)
       ..writeByte(5)
-      ..write(obj.position);
+      ..write(obj.position)
+      ..writeByte(6)
+      ..write(obj.deletedAt)
+      ..writeByte(7)
+      ..write(obj.pushAt);
   }
 
   @override

@@ -87,7 +87,7 @@ class _TesterState extends State<Tester> {
                         return ListTile(
                           title: Text('${e.firstName} ${e.lastName}'),
                           subtitle: Text(
-                              '${e.position} • ${e.phone}\nSupprimé le : ${e.deletedAt != null ? e.deletedAt!.toLocal().toString() : "Date inconnue"}'),
+                              '${e.position} • ${e.phone}\nDelete at : ${e.deletedAt != null ? e.deletedAt!.toLocal().toString() : "Date inconnue"}'),
                           trailing: Text('${e.salary} \$'),
                           isThreeLine: true,
                         );
@@ -95,6 +95,7 @@ class _TesterState extends State<Tester> {
                       separatorBuilder: (context, index) => const Divider(),
                     ),
             ),
+            SizedBox(height: 30),
           ],
         ),
       ),

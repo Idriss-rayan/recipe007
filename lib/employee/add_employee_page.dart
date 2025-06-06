@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:recipe/button/button.dart';
 import 'package:recipe/employee.dart';
+import 'package:recipe/employee/display_infos.dart';
 import 'package:recipe/employee/my_field.dart';
 import 'package:recipe/field_text/email_field.dart';
 import 'package:recipe/field_text/phone_field.dart';
@@ -143,6 +144,7 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       );
                       final box = Hive.box<Employee>('employees');
                       await box.add(newEmployee);
+                      final e = newEmployee;
 
                       showDialog(
                         context: context,
@@ -157,6 +159,23 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop(); // Close the dialog
+                                Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation,
+                                            secondaryAnimation) =>
+                                        DisplayInfos(
+                                      e: e,
+                                    ),
+                                    transitionsBuilder: (context, animation,
+                                        secondaryAnimation, child) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: child,
+                                      );
+                                    },
+                                  ),
+                                );
                               },
                               child: const Text(
                                 'OK',

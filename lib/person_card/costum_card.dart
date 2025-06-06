@@ -134,17 +134,20 @@ class CustomCard extends StatelessWidget {
                               : const Color.fromARGB(0, 255, 82, 82),
                           side: BorderSide(color: Colors.green),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            ' $pushAt',
-                            style: const TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black54,
-                            ),
-                          ),
-                        ),
+                        //----------------------------------------------------------------------
+                        //----- quand le pd de date et de time sera resolu, il sera afficher ...
+                        //----------------------------------------------------------------------
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Text(
+                        //     ' $pushAt',
+                        //     style: const TextStyle(
+                        //       fontSize: 13,
+                        //       fontWeight: FontWeight.w600,
+                        //       color: Colors.black54,
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ],

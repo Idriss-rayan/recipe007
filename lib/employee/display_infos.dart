@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:recipe/Learn_pdf/save_and_open_pdf.dart';
 import 'package:recipe/button/download_button.dart';
 import 'package:recipe/employee.dart';
@@ -14,6 +15,7 @@ class DisplayInfos extends StatefulWidget {
 }
 
 class _DisplayInfosState extends State<DisplayInfos> {
+  bool isLoading = false;
   final pdfrecipe = PdfRecipe();
   @override
   Widget build(BuildContext context) {
@@ -96,7 +98,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                         ),
                         onPressed: () {},
                         icon: const Icon(Icons.arrow_forward_ios, size: 16),
-                        label: const Text("Plus"),
+                        label: const Text("More"),
                       ),
                     ),
                   ],
@@ -354,6 +356,12 @@ class _DisplayInfosState extends State<DisplayInfos> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
+                                Lottie.asset(
+                                  'a_svgFiles/arrow.json', // <-- assure-toi du bon chemin
+                                  width: 60,
+                                  height: 60,
+                                  repeat: true,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: DownloadButton(
@@ -381,8 +389,7 @@ class _DisplayInfosState extends State<DisplayInfos> {
                                         phone: ' ${widget.e.phone}',
                                         position: ' ${widget.e.position}',
                                         salary: ' ${widget.e.salary}',
-                                        issuedDate:
-                                            issuedDateFormatted, // ici c’est une String formatée
+                                        issuedDate: issuedDateFormatted,
                                         description: ' ${widget.e.email}',
                                       );
                                       SaveAndOpenDocument.openPdf(

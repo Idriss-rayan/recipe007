@@ -26,7 +26,7 @@ class Employee extends HiveObject {
   DateTime? deletedAt;
 
   @HiveField(7)
-  DateTime? pushAt;
+  final DateTime? pushAt;
 
   Employee({
     required this.firstName,

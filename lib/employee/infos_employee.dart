@@ -111,16 +111,16 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                 itemCount: employees.length,
                 itemBuilder: (context, index) {
                   final e = employees[index];
-                  final DateTime issuedDateRaw = e.pushAt ?? DateTime.now();
-                  final DateTime issuedDateRounded = DateTime(
-                    issuedDateRaw.year,
-                    issuedDateRaw.month,
-                    issuedDateRaw.day,
-                    issuedDateRaw.hour,
-                    issuedDateRaw.minute,
+                  DateTime now = DateTime.now();
+                  DateTime trimmed = DateTime(
+                    now.year,
+                    now.month,
+                    now.day,
+                    now.hour,
+                    now.minute,
                   );
-                  final String issuedDateFormatted =
-                      DateFormat('dd-MM-yyyy HH:mm').format(issuedDateRounded);
+                  final formatted =
+                      DateFormat("dd-MM-yyyy | HH:mm").format(trimmed);
                   return InkWell(
                     onTap: () {
                       Navigator.push(
@@ -146,7 +146,7 @@ class _InfosEmployeeState extends State<InfosEmployee> {
                       salary: e.salary,
                       position: e.position,
                       status: 'Save',
-                      pushAt: issuedDateFormatted,
+                      pushAt: formatted,
                       // delete ici
                       onTap: () async {
                         final confirmed = await showDialog<bool>(
