@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:lottie/lottie.dart';
 import 'package:recipe/employee.dart';
 
 class Tester extends StatefulWidget {
@@ -61,6 +62,23 @@ class _TesterState extends State<Tester> {
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                 ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            left: -100,
+                            top: -50,
+                            child: Lottie.asset("a_svgFiles/tr.json"),
+                          ),
+                          const Positioned(
+                            left: 180,
+                            top: 180,
+                            child: Text(
+                              'Recycle Bin',
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(111, 255, 255, 255),
                               ),
                             ),
                           ),

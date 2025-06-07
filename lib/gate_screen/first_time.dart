@@ -34,8 +34,8 @@ class LaunchGate extends StatelessWidget {
           return const StartScreen();
         } else {
           return const Nav1Bar(
-            lastName: 'Default',
-            firstName: 'Admin',
+            lastName: 'rayan',
+            firstName: 'idriss',
           );
         }
       },
