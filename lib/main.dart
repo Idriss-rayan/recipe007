@@ -3,6 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:recipe/Learn_pdf/home_page.dart';
 import 'package:recipe/employee.dart';
+import 'package:recipe/gate_screen/first_time.dart';
 import 'package:recipe/gate_screen/start_screen.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
 
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: Nav1Bar(),
-      home: StartScreen(),
+      home: LaunchGate(),
+      //home: StartScreen(),
     );
   }
 }
