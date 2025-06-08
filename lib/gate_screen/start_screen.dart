@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/gate_screen/first_time.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
 
 class StartScreen extends StatefulWidget {
