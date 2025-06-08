@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/navigationBar/nav1_bar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
@@ -135,6 +136,11 @@ class _StartScreenState extends State<StartScreen> {
                       onTap: () async {
                         String lastName = lastNameController.text.trim();
                         String firstName = firstNameController.text.trim();
+
+                        final prefs = await SharedPreferences.getInstance();
+                        await prefs.setString('last_name', lastName);
+                        await prefs.setString('first_name', firstName);
+
                         Navigator.pushReplacement(
                           context,
                           PageRouteBuilder(

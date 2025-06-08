@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:recipe/Learn_pdf/save_and_open_pdf.dart';
+import 'package:recipe/recipe_generate/user_info_helper.dart';
 
 class PdfRecipe {
   Future<File> generateStyledReceiptPdf({
@@ -13,6 +14,7 @@ class PdfRecipe {
     required String issuedDate,
     required String description,
   }) async {
+    final full_Admin_Name = await UserInfoHelper.getFullName();
     final pdf = pw.Document();
 
     pw.Widget infoBox(String label, String value) {
@@ -90,14 +92,16 @@ class PdfRecipe {
                               lineSpacing: 16,
                               fontSize: 14,
                               color: PdfColors.black),
+                          ///////////////////-------------------- met le nom de sharepreferences ici en bas./////////////////
                           children: [
                             pw.TextSpan(
-                              text: '  $fullName '.toUpperCase(),
+                              text: '  $full_Admin_Name '.toUpperCase(),
                               style: pw.TextStyle(
                                 lineSpacing: 16,
                                 fontWeight: pw.FontWeight.bold,
                               ),
                             ),
+                            //-------------------------------------------------------------------------------//
                             pw.TextSpan(
                               text: 'has duly paid to Mr./Ms.',
                             ),
