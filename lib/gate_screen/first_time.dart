@@ -40,7 +40,7 @@ class LaunchGate extends StatelessWidget {
         final firstName = data['firstName'] ?? '';
         final lastName = data['lastName'] ?? '';
 
-        if (isFirst) {
+        if (isFirst || firstName.isEmpty || lastName.isEmpty) {
           return const StartScreen();
         } else {
           return Nav1Bar(

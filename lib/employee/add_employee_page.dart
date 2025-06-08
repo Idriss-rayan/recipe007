@@ -129,7 +129,28 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                           position.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('please fill all fields'),
+                            content: Text(
+                              'Please fill all fields',
+                              style: TextStyle(
+                                color: Colors.white,
+                                //fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                            backgroundColor:
+                                const Color.fromARGB(111, 3, 207, 210),
+                            duration: Duration(seconds: 10),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            behavior: SnackBarBehavior.floating,
+                            margin: EdgeInsets.all(16),
+                            action: SnackBarAction(
+                              label: 'OK',
+                              textColor: const Color.fromARGB(255, 33, 3, 144),
+                              onPressed: () {},
+                            ),
                           ),
                         );
                         return;
