@@ -115,7 +115,7 @@ class _StartScreenState extends State<StartScreen> {
                     // Champ mot de passe
                     TextField(
                       controller: firstNameController,
-                      obscureText: true,
+                      obscureText: false,
                       decoration: InputDecoration(
                         hintText: 'first name',
                         hintStyle: const TextStyle(
