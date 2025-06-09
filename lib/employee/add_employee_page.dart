@@ -199,7 +199,7 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                                 );
                               },
                               child: const Text(
-                                'OK',
+                                'Ok',
                                 style: TextStyle(color: Colors.green),
                               ),
                             ),
