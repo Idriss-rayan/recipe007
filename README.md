@@ -12,7 +12,7 @@
 - **Recycle Bin**: Restore accidentally deleted records or purge permanently.
 
 ## Screenshots of images
-![Texte alternatif](screenshot/deuxieme)
+![Texte alternatif](screenshot/deuxieme.png)
 
 ## 🧰 Tech Stack  
 - **Flutter**: Cross-platform UI framework.  
