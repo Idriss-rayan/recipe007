@@ -9,7 +9,10 @@
 - **Employee Dashboard**: View and manage employee records (name, email, phone, position, salary).  
 - **CRUD Operations**: Add, edit, or delete employees seamlessly.  
 - **Data Export**: Download employee details for offline use.  
-- **Recycle Bin**: Restore accidentally deleted records or purge permanently.  
+- **Recycle Bin**: Restore accidentally deleted records or purge permanently.
+
+## Screenshots of images
+![Texte alternatif](screenshot/deuxieme)
 
 ## 🧰 Tech Stack  
 - **Flutter**: Cross-platform UI framework.  
