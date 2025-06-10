@@ -13,6 +13,9 @@
 
 ## Screenshots of images
 ![Texte alternatif](screenshot/deuxieme.png)
+<div align="center">
+  <img src="screenshot/deuxieme.png" alt="Dashboard" width="400"/>
+</div>
 
 ## Screenshots of images on the smartphone
 
