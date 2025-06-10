@@ -13,7 +13,7 @@
 
 ## Screenshots of images
 ![Texte alternatif](screenshot/deuxieme.png)
-![Texte alternatif](screenshot/premier (1).png)
+![Texte alternatif](screenshot/premier.png)
 
 ## Screenshots of images on the smartphone
 
