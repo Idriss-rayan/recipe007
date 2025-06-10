@@ -13,6 +13,10 @@
 
 ## Screenshots of images
 ![Texte alternatif](screenshot/deuxieme.png)
+![Texte alternatif](screenshot/premier (1).png)
+
+## Screenshots of images on the smartphone
+
 
 ## 🧰 Tech Stack  
 - **Flutter**: Cross-platform UI framework.  
