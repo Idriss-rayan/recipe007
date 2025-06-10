@@ -14,11 +14,11 @@
 ## Screenshots of images
 ![Texte alternatif](screenshot/deuxieme.png)
 <div align="center">
-  <img src="screenshot/1" alt="Dashboard" width="400"/>
-  <img src="screenshot/1" alt="Dashboard" width="400"/>
-  <img src="screenshot/1" alt="Dashboard" width="400"/>
-  <img src="screenshot/1" alt="Dashboard" width="400"/>
-  <img src="screenshot/1" alt="Dashboard" width="400"/>
+  <img src="screenshot/1.png" alt="Dashboard" width="400"/>
+  <img src="screenshot/1.png" alt="Dashboard" width="400"/>
+  <img src="screenshot/1.png" alt="Dashboard" width="400"/>
+  <img src="screenshot/1.png" alt="Dashboard" width="400"/>
+  <img src="screenshot/1.png" alt="Dashboard" width="400"/>
 </div>
 
 ## Screenshots of images on the smartphone
