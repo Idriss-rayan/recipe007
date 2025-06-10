@@ -11,8 +11,7 @@
 - **Data Export**: Download employee details for offline use.  
 - **Recycle Bin**: Restore accidentally deleted records or purge permanently.
 
-## Screenshots of images
-![Texte alternatif](screenshot/deuxieme.png)
+## Screenshots of images on the smartphone
 <div align="center">
   <img src="screenshot/4.png" alt="Dashboard" width="200"/>
   <img src="screenshot/5.png" alt="Dashboard" width="200"/>
@@ -21,7 +20,9 @@
   <img src="screenshot/3.png" alt="Dashboard" width="200"/>
 </div>
 
-## Screenshots of images on the smartphone
+## Screenshots of images in the figma
+![Texte alternatif](screenshot/deuxieme.png)
+
 
 
 ## 🧰 Tech Stack  
