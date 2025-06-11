@@ -107,10 +107,10 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                     htext: 'position held',
                     controller: _controller6,
                   ),
-                  MyField(
-                    htext: '',
-                    controller: _controller6,
-                  ),
+                  // MyField(
+                  //   htext: '',
+                  //   controller: _controller6,
+                  // ),
                   FancyButton(
                     text: 'save',
                     onPressed: () async {
@@ -165,6 +165,12 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                       );
                       final box = Hive.box<Employee>('employees');
                       await box.add(newEmployee);
+                      _controller1.clear();
+                      _controller2.clear();
+                      _controller3.clear();
+                      _controller4.clear();
+                      _controller5.clear();
+                      _controller6.clear();
                       final e = newEmployee;
 
                       showDialog(
@@ -180,14 +186,12 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop(); // Close the dialog
-                                Navigator.pushReplacement(
+                                Navigator.push(
                                   context,
                                   PageRouteBuilder(
                                     pageBuilder: (context, animation,
                                             secondaryAnimation) =>
-                                        DisplayInfos(
-                                      e: e,
-                                    ),
+                                        DisplayInfos(e: e),
                                     transitionsBuilder: (context, animation,
                                         secondaryAnimation, child) {
                                       return FadeTransition(
